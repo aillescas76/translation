@@ -1,0 +1,8 @@
+pypdf
+pytesseract
+pdf2image
+opencv-python
+numpy
+google-generativeai
+python-dotenv
+fpdf2
