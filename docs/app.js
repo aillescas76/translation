@@ -25,10 +25,18 @@ document.addEventListener('DOMContentLoaded', () => {
 
         const pageData = manifest.pages[index];
         
-        // Update image using the path from the data file
+        // Show loading state
+        const loadingSpinner = document.getElementById('loading-spinner');
+        loadingSpinner.classList.remove('hidden');
+        translatedText.textContent = "Loading...";
+        
+        // Load new image
+        pageImage.onload = () => {
+            loadingSpinner.classList.add('hidden');
+        };
         pageImage.src = pageData.image;
 
-        // Update text directly from the data object
+        // Update text from data
         translatedText.textContent = pageData.translation || "No translated text found for this page.";
 
         updateControls();
